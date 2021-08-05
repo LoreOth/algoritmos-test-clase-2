@@ -30,15 +30,15 @@ public class Agenda {
     }
 
     public static Integer obtenerTelefono(String nombre){
-        if ( miAgenda().contains(nombre)) {
-            return miAgenda().get(nombre);
+        if ( miAgenda.containsKey(nombre)) {
+            return miAgenda.get(nombre);
         }
         return null;
     }
 
     public static boolean eliminarTelefono(String nombre){
-        if ( miAgenda().contains(nombre)) {
-            miAgenda().remove(nombre);
+        if ( miAgenda.containsKey(nombre)) {
+            miAgenda.remove(nombre);
             return true;
         }
         return false;

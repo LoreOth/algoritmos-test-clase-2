@@ -1,10 +1,9 @@
 package com.redbeeacademy.algoritmostest.Lista.EjercicioCine;
 
 public class Resultado {
-
-    private Integer cantNiños;
-    private Integer cantAdolesc;
-    private Integer cantAdult;
+    private Integer cantNiños = 0;
+    private Integer cantAdolesc = 0;
+    private Integer cantAdult = 0;
 
 
 

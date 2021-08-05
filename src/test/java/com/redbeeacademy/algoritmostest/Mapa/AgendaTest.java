@@ -30,9 +30,9 @@ class AgendaTest extends Agenda{
     @DisplayName("Tests happy path show value")
     public void testHappyPathShowValue() {
         Agenda.nuevoContacto("Lore", 2215930);
-        Integer telefono = Agenda.obtenerTelefono("Laura");
+        Integer telefono = Agenda.obtenerTelefono("Lore");
 
-        assertEquals(1131392, telefono);
+        assertEquals(2215930, telefono);
     }
 
     @Test

@@ -43,8 +43,8 @@ public class Cine {
     }
 
 
-    public static Persona cantidadPersonas(List<Persona> personas) {
-        Persona total = new Persona();
+    public static Resultado cantidadPersonas(List<Persona> personas) {
+        Resultado total = new Resultado();
         int espectadores = personas.size();
         for (int i = 0; i < espectadores; i++) {
             if (personas.get(i) != null) {
@@ -71,9 +71,11 @@ public class Cine {
     public static double promedioEdad(List<Persona> personas) {
         double suma = 0;
         int espectadores = personas.size();
-        for (int i = 0; i < espectadores; i++) {
+        for (int i = 0; i < personas.size(); i++) {
             if (personas.get(i) != null) {
                 suma = suma + personas.get(i).getEdad();
+            } else {
+                espectadores--;
             }
         }
         return (suma / espectadores);
