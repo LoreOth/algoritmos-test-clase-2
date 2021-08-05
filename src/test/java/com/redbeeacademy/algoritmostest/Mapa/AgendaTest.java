@@ -12,33 +12,33 @@ class AgendaTest extends Agenda{
     @Test
     @DisplayName("Tests happy path add")
     public void testHappyPathAdd() {
-        Agenda.nuevoContacto("Laura", 1131391999);
+        Agenda.nuevoContacto("Laura", 1131391);
 
-        assertTrue(miAgenda().contains(1131391999));
+        assertTrue(miAgenda().contains(1131391));
     }
 
     @Test
     @DisplayName("Tests happy path modify")
     public void testHappyPathModify() {
-        Agenda.nuevoContacto("Laura", 1131391999);
-        Agenda.modificarTelefono("Laura", 1131391998);
+        Agenda.nuevoContacto("Laura", 1131391);
+        Agenda.modificarTelefono("Laura", 1131392);
 
-        assertTrue(miAgenda().contains(1131391998));
+        assertTrue(miAgenda().contains(1131392));
     }
 
     @Test
     @DisplayName("Tests happy path show value")
     public void testHappyPathShowValue() {
-        Agenda.nuevoContacto("Laura", 1131391999);
+        Agenda.nuevoContacto("Lore", 2215930);
         Integer telefono = Agenda.obtenerTelefono("Laura");
 
-        assertEquals(1131391999, telefono);
+        assertEquals(1131392, telefono);
     }
 
     @Test
     @DisplayName("Tests happy path eliminated true")
     public void testHappyPathEliminatedTrue() {
-        Agenda.nuevoContacto("Laura", 1131391999);
+        Agenda.nuevoContacto("Laura", 1131392);
         Boolean eliminado = Agenda.eliminarTelefono("Laura");
 
         assertTrue(eliminado);
@@ -56,10 +56,10 @@ class AgendaTest extends Agenda{
     @Test
     @DisplayName("Tests happy path collection of telephones")
     public void testHappyPathCollectionOfTelephones() {
-        Agenda.nuevoContacto("Laura", 1131391999);
+        Agenda.nuevoContacto("Laura", 1131391);
         List<Integer> listaTelefonos = Agenda.miAgenda();
-
-        assertTrue(listaTelefonos.contains(1131391999));
+        System.out.println(listaTelefonos);
+        assertTrue(listaTelefonos.contains(1131391));
     }
 
 }

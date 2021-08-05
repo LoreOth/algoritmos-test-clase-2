@@ -22,25 +22,30 @@ class CineTest {
     @Test
     @DisplayName("Test when null values are sent total recaudado")
     public void testNullValuesTotalRecaudado() {
-        Double result = Cine.cantidadTotalRecaudada(List.of(new Persona(30), null, new Persona(8), new Persona(18) ));
+        Double result = Cine.cantidadTotalRecaudada(List.of(new Persona(30), new Persona(17), new Persona(8), new Persona(18) ));
         assertNotNull(result, "The result cannot be null");
-        assertEquals(550, result);
+        assertEquals(650, result);
+
     }
 
     @Test
     @DisplayName("Tests happy path cantidad personas")
     public void testHappyPathCantidadPersonas() {
-        Integer result = Cine.cantidadPersonas(List.of(new Persona(30), new Persona(17), new Persona(8), new Persona(18) ));
-        assertNotNull(result, "The result cannot be null");
-        assertEquals(4, result);
+       Persona  result = Cine.cantidadPersonas(List.of(new Persona(30), new Persona(17), new Persona(8), new Persona(18) ));
+        //assertNotNull(result, "The result cannot be null");
+        assertEquals(1, result.getCantNiños());
+        assertEquals(1, result.getCantAdolesc());
+        assertEquals(2, result.getCantAdult());
     }
 
     @Test
     @DisplayName("Test when null values are sent cantidad personas")
     public void testNullValuesCantidadPersonas() {
-        Integer result = Cine.cantidadPersonas(List.of(new Persona(30), null, new Persona(8), new Persona(18) ));
+        Persona result = Cine.cantidadPersonas(List.of(new Persona(30), null, new Persona(8), new Persona(18) ));  // consultar cuál es el problema.-
         assertNotNull(result, "The result cannot be null");
-        assertEquals(3, result);
+        assertEquals(1, result.getCantNiños());
+        assertEquals(0, result.getCantAdolesc());
+        assertEquals(2, result.getCantAdult());
     }
 
     @Test
@@ -54,7 +59,7 @@ class CineTest {
     @Test
     @DisplayName("Test when null values are sent promedio edad")
     public void testNullValuesPromedioEdad() {
-        Double result = Cine.promedioEdad(List.of(new Persona(30), null, new Persona(8), new Persona(18) ));
+        Double result = Cine.promedioEdad(List.of(new Persona(30), null, new Persona(8), new Persona(18) ));  // consultar cuál es el problema.-
         assertNotNull(result, "The result cannot be null");
         assertEquals(18.66, result);
     }

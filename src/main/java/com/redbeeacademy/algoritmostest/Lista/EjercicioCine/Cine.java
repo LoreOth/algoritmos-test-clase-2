@@ -21,24 +21,61 @@ Tenemos la clase Persona, donde vamos a usarla para modelar edad, y las propieda
  */
 
 
-
 public class Cine {
 
-    public static double cantidadTotalRecaudada(List<Persona> personas){
+    public static double cantidadTotalRecaudada(List<Persona> personas) {
         double cantidadTotal = 0;
-        //TODO -> implement me
+        int espectadores = personas.size();
+        for (int i = 0; i < espectadores; i++) {
+            if ((personas.get(i).getEdad() >= 5) && (personas.get(i).getEdad() <= 10)) {
+                cantidadTotal = cantidadTotal + 100;
+            } else {
+                if ((personas.get(i).getEdad() >= 11) && (personas.get(i).getEdad() <= 17)) {
+                    cantidadTotal = cantidadTotal + 150;
+                } else {
+                    if ((personas.get(i).getEdad() >= 18)) {
+                        cantidadTotal = cantidadTotal + 200;
+                    }
+                }
+            }
+        }
         return cantidadTotal;
     }
 
-    public static Integer cantidadPersonas(List<Persona> personas){
-        Integer cantidadPersonas = 0;
-        //TODO -> implement me
-        return cantidadPersonas;
+
+    public static Persona cantidadPersonas(List<Persona> personas) {
+        Persona total = new Persona();
+        int espectadores = personas.size();
+        for (int i = 0; i < espectadores; i++) {
+            if (personas.get(i) != null) {
+                if ((personas.get(i).getEdad() >= 5) && (personas.get(i).getEdad() <= 10)) {
+                    total.setCantNiños();
+                } else {
+                    if ((personas.get(i).getEdad() >= 11) && (personas.get(i).getEdad() <= 17)) {
+                        total.setCantAdolesc();
+                    } else {
+                        if ((personas.get(i).getEdad() >= 18)) {
+                            total.setCantAdult();
+                        }
+                    }
+                }
+            }
+        }
+
+        return total;
+
+
     }
 
-    public static double promedioEdad(List<Persona> personas){
-        double promedio = 0;
-        //TODO -> implement me
-        return promedio;
+
+    public static double promedioEdad(List<Persona> personas) {
+        double suma = 0;
+        int espectadores = personas.size();
+        for (int i = 0; i < espectadores; i++) {
+            if (personas.get(i) != null) {
+                suma = suma + personas.get(i).getEdad();
+            }
+        }
+        return (suma / espectadores);
     }
 }

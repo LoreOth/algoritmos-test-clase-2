@@ -10,15 +10,13 @@ class BuscarElementoTest {
 
     @Test
     void devuelvoFalse() {
-        boolean result = BuscarElemento.devuelvoVerdadero(List.of(3,6,2,1,5),7);
-
+        boolean result = BuscarElemento.devuelvoVerdadero(List.of(3, 6, 2, 1, 5), 7);
         assertFalse(result);
     }
 
     @Test
     void devuelvoTrue() {
-        boolean result = BuscarElemento.devuelvoVerdadero(List.of(3,6,2,1,5),2);
-
+        boolean result = BuscarElemento.devuelvoVerdadero(List.of(3, 6, 2, 1, 5), 2);
         assertTrue(result);
     }
 }

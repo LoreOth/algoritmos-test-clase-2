@@ -1,6 +1,5 @@
 package com.redbeeacademy.algoritmostest.Mapa;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,20 +22,25 @@ public class Agenda {
             new HashMap<>();
 
     public static void nuevoContacto(String nombre, int telefono){
-        //TODO -> implement me
+        miAgenda.put(nombre, telefono);
     }
 
     public static void modificarTelefono(String nombre, int telefono){
-        //TODO -> implement me
+        miAgenda.replace(nombre,telefono);
     }
 
     public static Integer obtenerTelefono(String nombre){
-        //TODO -> implement me
+        if ( miAgenda().contains(nombre)) {
+            return miAgenda().get(nombre);
+        }
         return null;
     }
 
     public static boolean eliminarTelefono(String nombre){
-        //TODO -> implement me
+        if ( miAgenda().contains(nombre)) {
+            miAgenda().remove(nombre);
+            return true;
+        }
         return false;
     }
 
